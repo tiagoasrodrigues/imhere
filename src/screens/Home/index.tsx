@@ -7,7 +7,11 @@ import { styles } from "./styles";
 
 export function Home() {
   function handleParticipantAdd() {
-    console.log('Você clicou no botão')
+    console.log('Você clicou no botão adicionar')
+  }
+
+  function handleParticipantRemove(name: string) {
+    console.log(`Você clicou em remover o participante ${name}`)
   }
 
   return (
@@ -32,11 +36,10 @@ export function Home() {
           </Text>
         </TouchableOpacity>
       </View>
-      <Participant />
-      <Participant />
-      <Participant />
-      <Participant />
-      <Participant />
+      <Participant name='Tiago Augusto' onRemove={() => handleParticipantRemove("Tiago Augusto")} />
+      <Participant name='Karen Camargo' onRemove={() => handleParticipantRemove("Karen Camargo")} />
+      <Participant name='Ester Jade' onRemove={() => handleParticipantRemove("Ester Jade")} />
+      <Participant name='Roseli Guirau' onRemove={() => handleParticipantRemove("Roseli Guirau")} />
     </View>
   );
 }
