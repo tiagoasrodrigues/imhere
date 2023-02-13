@@ -11,10 +11,10 @@ export function Home() {
 
   function handleParticipantAdd() {
     if (participants.includes(participantName)) {
-      return Alert.alert('Participante existente!','Já existe um participante na lista com nome.')
+      return Alert.alert('Participante existente!', 'Já existe um participante na lista com nome.')
     }
 
-    setParticipants( prevState => [...prevState, participantName]);
+    setParticipants(prevState => [...prevState, participantName]);
     setParticipantName('');
   }
 
@@ -22,7 +22,7 @@ export function Home() {
     Alert.alert('Remover', `Remover o participante ${name}?`, [
       {
         text: 'Sim',
-        onPress: () => Alert.alert(`Participante ${name} removido!`)
+        onPress: () => { { setParticipants(prevState => prevState.filter(participant => participant !== name)) } Alert.alert(`Participante ${name} removido!`) }
       },
 
       {
